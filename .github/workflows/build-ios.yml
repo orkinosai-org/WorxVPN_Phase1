@@ -18,7 +18,7 @@ jobs:
 
       - name: Build iOS App
         run: |
-          cd TestApp/TestApp
+          cd TestApp
           xcodebuild -project TestApp.xcodeproj \
             -scheme TestApp \
             -sdk iphoneos \
@@ -29,4 +29,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: TestApp-Release
-          path: TestApp/TestApp/build/Release-iphoneos/TestApp.app
+          path: TestApp/build/Release-iphoneos/TestApp.app
