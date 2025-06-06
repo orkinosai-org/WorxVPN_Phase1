@@ -27,7 +27,7 @@ jobs:
           xcrun swiftc MainViewController.swift -o build/TestApp
 
       - name: Archive demo output
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: iOS_DemoUI_Compiled
           path: TestApp/build/TestApp
