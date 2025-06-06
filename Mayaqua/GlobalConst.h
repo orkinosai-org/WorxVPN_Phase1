@@ -1,0 +1,1 @@
+// GlobalConst.h - mayaqua source
