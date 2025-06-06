@@ -19,7 +19,8 @@ jobs:
       - name: Build Swift App with xcodebuild
         run: |
           cd TestApp
-          xcodebuild -project TestApp.xcodeproj \
+          xcodebuild -project TestApp/TestApp/TestApp.xcodeproj \
+
                      -scheme TestApp \
                      -sdk iphoneos \
                      -configuration Release \
