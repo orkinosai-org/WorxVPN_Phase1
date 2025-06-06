@@ -1,0 +1,33 @@
+name: Build iOS VPN Demo UI
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-ios-static-lib:
+    runs-on: macos-14
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Xcode
+        run: sudo xcode-select -s /Applications/Xcode_15.2.app
+
+      - name: Create build dir
+        run: |
+          mkdir -p TestApp/build
+          echo "App directory structure ready"
+
+      - name: Compile Swift Demo App
+        run: |
+          cd TestApp
+          xcrun swiftc MainViewController.swift -o build/TestApp
+
+      - name: Archive demo output
+        uses: actions/upload-artifact@v2
+        with:
+          name: iOS_DemoUI_Compiled
+          path: TestApp/build/TestApp
