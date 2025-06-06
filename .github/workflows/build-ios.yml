@@ -16,19 +16,17 @@ jobs:
       - name: Set up Xcode
         run: sudo xcode-select -s /Applications/Xcode_15.2.app
 
-      - name: Build Swift App with xcodebuild
+      - name: Build iOS App
         run: |
           cd TestApp
-          xcodebuild -project TestApp/TestApp/TestApp.xcodeproj \
+          xcodebuild -project TestApp.xcodeproj \
+            -scheme TestApp \
+            -sdk iphoneos \
+            -configuration Release \
+            CODE_SIGNING_ALLOWED=NO
 
-                     -scheme TestApp \
-                     -sdk iphoneos \
-                     -configuration Release \
-                     CODE_SIGN_IDENTITY="" \
-                     CODE_SIGNING_REQUIRED=NO
-
-      - name: Upload .app output
+      - name: Upload .app bundle
         uses: actions/upload-artifact@v4
         with:
-          name: iOS_DemoApp
-          path: TestApp/build/Release-iphoneos/*.app
+          name: TestApp-Release
+          path: TestApp/build/Release-iphoneos/TestApp.app
