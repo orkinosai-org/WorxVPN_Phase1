@@ -100,6 +100,8 @@
         PRODUCT_NAME = "$(TARGET_NAME)";
         INFOPLIST_FILE = Info.plist;
         SWIFT_VERSION = 5.0;
+        PRODUCT_BUNDLE_IDENTIFIER = com.orkinosai.testapp;
+        ALWAYS_SEARCH_USER_PATHS = NO;
       };
       name = Debug;
     };
@@ -109,6 +111,8 @@
         PRODUCT_NAME = "$(TARGET_NAME)";
         INFOPLIST_FILE = Info.plist;
         SWIFT_VERSION = 5.0;
+        PRODUCT_BUNDLE_IDENTIFIER = com.orkinosai.testapp;
+        ALWAYS_SEARCH_USER_PATHS = NO;
       };
       name = Release;
     };
