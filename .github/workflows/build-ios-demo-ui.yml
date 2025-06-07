@@ -16,17 +16,13 @@ jobs:
       - name: Set up Xcode
         run: sudo xcode-select -s /Applications/Xcode_15.2.app
 
-      - name: Clean Derived Data
-        run: rm -rf ~/Library/Developer/Xcode/DerivedData/*
-
       - name: Build iOS App
         run: |
-          xcodebuild \
-            -project TestApp.xcodeproj \
+          xcodebuild -project TestApp.xcodeproj \
             -scheme TestApp \
             -sdk iphoneos \
             -configuration Release \
-            -derivedDataPath build \
+            BUILD_DIR=build \
             CODE_SIGNING_ALLOWED=NO \
             SWIFT_VERSION=5.0
 
@@ -34,4 +30,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: TestApp-Release
-          path: build/Build/Products/Release-iphoneos/TestApp.app
+          path: build/Release-iphoneos/TestApp.app
