@@ -18,7 +18,7 @@ jobs:
 
       - name: Build iOS App
         run: |
-          xcodebuild -project TestApp/TestApp.xcodeproj \
+          xcodebuild -project TestApp.xcodeproj \
             -scheme TestApp \
             -sdk iphoneos \
             -configuration Release \
