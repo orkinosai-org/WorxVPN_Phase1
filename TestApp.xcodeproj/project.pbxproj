@@ -99,6 +99,7 @@
       buildSettings = {
         PRODUCT_NAME = "$(TARGET_NAME)";
         INFOPLIST_FILE = Info.plist;
+        SWIFT_VERSION = 5.0;
       };
       name = Debug;
     };
@@ -107,6 +108,7 @@
       buildSettings = {
         PRODUCT_NAME = "$(TARGET_NAME)";
         INFOPLIST_FILE = Info.plist;
+        SWIFT_VERSION = 5.0;
       };
       name = Release;
     };
