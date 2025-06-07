@@ -23,10 +23,11 @@ jobs:
             -scheme TestApp \
             -sdk iphoneos \
             -configuration Release \
+            BUILD_DIR=../build \
             CODE_SIGNING_ALLOWED=NO
 
       - name: Upload .app bundle
         uses: actions/upload-artifact@v4
         with:
           name: TestApp-Release
-          path: TestApp/build/Release-iphoneos/TestApp.app
+          path: build/Release-iphoneos/TestApp.app
