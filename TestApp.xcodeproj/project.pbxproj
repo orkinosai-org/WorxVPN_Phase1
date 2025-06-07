@@ -2,7 +2,136 @@
 {
   archiveVersion = 1;
   classes = {};
-  objectVersion = 46;
-  objects = {};
-  rootObject = 000000000000000000000000;
+  objectVersion = 52;
+  objects = {
+
+    /* Begin PBXBuildFile section */
+    01D1A0F026C4A1E7003A11D2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1A0F126C4A1E7003A11D2 /* MainViewController.swift */; };
+    /* End PBXBuildFile section */
+
+    /* Begin PBXFileReference section */
+    01D1A0F126C4A1E7003A11D2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+    01D1A0F826C4A21E003A11D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+    01D1A0FA26C4A236003A11D2 /* TestApp */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+    /* End PBXFileReference section */
+
+    /* Begin PBXGroup section */
+    01D1A0EF26C4A1E7003A11D2 = {
+      isa = PBXGroup;
+      children = (
+        01D1A0F126C4A1E7003A11D2 /* MainViewController.swift */,
+        01D1A0F826C4A21E003A11D2 /* Info.plist */,
+      );
+      path = "";
+      sourceTree = "<group>";
+    };
+    01D1A0F926C4A236003A11D2 = {
+      isa = PBXGroup;
+      children = (
+        01D1A0FA26C4A236003A11D2 /* TestApp */,
+      );
+      name = Products;
+      sourceTree = "<group>";
+    };
+    01D1A0EE26C4A1E7003A11D2 = {
+      isa = PBXGroup;
+      children = (
+        01D1A0EF26C4A1E7003A11D2,
+        01D1A0F926C4A236003A11D2,
+      );
+      sourceTree = "<group>";
+    };
+    /* End PBXGroup section */
+
+    /* Begin PBXNativeTarget section */
+    01D1A0F726C4A236003A11D2 /* TestApp */ = {
+      isa = PBXNativeTarget;
+      buildConfigurationList = 01D1A0FD26C4A259003A11D2 /* Build configuration list for PBXNativeTarget "TestApp" */;
+      buildPhases = (
+        01D1A0F526C4A236003A11D2 /* Sources */,
+      );
+      buildRules = ();
+      dependencies = ();
+      name = TestApp;
+      productName = TestApp;
+      productReference = 01D1A0FA26C4A236003A11D2 /* TestApp */;
+      productType = "com.apple.product-type.application";
+    };
+    /* End PBXNativeTarget section */
+
+    /* Begin PBXProject section */
+    01D1A0ED26C4A1E7003A11D2 /* Project object */ = {
+      isa = PBXProject;
+      attributes = {
+        LastUpgradeCheck = 1400;
+        ORGANIZATIONNAME = "OrkinosAI";
+      };
+      buildConfigurationList = 01D1A0F326C4A236003A11D2 /* Build configuration list for PBXProject "TestApp" */;
+      compatibilityVersion = "Xcode 14.0";
+      developmentRegion = en;
+      hasScannedForEncodings = 0;
+      knownRegions = (
+        en,
+      );
+      mainGroup = 01D1A0EE26C4A1E7003A11D2;
+      productRefGroup = 01D1A0F926C4A236003A11D2;
+      projectDirPath = "";
+      targets = (
+        01D1A0F726C4A236003A11D2 /* TestApp */,
+      );
+    };
+    /* End PBXProject section */
+
+    /* Begin PBXSourcesBuildPhase section */
+    01D1A0F526C4A236003A11D2 /* Sources */ = {
+      isa = PBXSourcesBuildPhase;
+      buildActionMask = 2147483647;
+      files = (
+        01D1A0F026C4A1E7003A11D2 /* MainViewController.swift in Sources */,
+      );
+      runOnlyForDeploymentPostprocessing = 0;
+    };
+    /* End PBXSourcesBuildPhase section */
+
+    /* Begin XCBuildConfiguration section */
+    01D1A0FB26C4A259003A11D2 /* Debug */ = {
+      isa = XCBuildConfiguration;
+      buildSettings = {
+        PRODUCT_NAME = "$(TARGET_NAME)";
+        INFOPLIST_FILE = Info.plist;
+      };
+      name = Debug;
+    };
+    01D1A0FC26C4A259003A11D2 /* Release */ = {
+      isa = XCBuildConfiguration;
+      buildSettings = {
+        PRODUCT_NAME = "$(TARGET_NAME)";
+        INFOPLIST_FILE = Info.plist;
+      };
+      name = Release;
+    };
+    /* End XCBuildConfiguration section */
+
+    /* Begin XCConfigurationList section */
+    01D1A0F326C4A236003A11D2 /* Build configuration list for PBXProject "TestApp" */ = {
+      isa = XCConfigurationList;
+      buildConfigurations = (
+        01D1A0FB26C4A259003A11D2 /* Debug */,
+        01D1A0FC26C4A259003A11D2 /* Release */,
+      );
+      defaultConfigurationIsVisible = 0;
+      defaultConfigurationName = Release;
+    };
+    01D1A0FD26C4A259003A11D2 /* Build configuration list for PBXNativeTarget "TestApp" */ = {
+      isa = XCConfigurationList;
+      buildConfigurations = (
+        01D1A0FB26C4A259003A11D2 /* Debug */,
+        01D1A0FC26C4A259003A11D2 /* Release */,
+      );
+      defaultConfigurationIsVisible = 0;
+      defaultConfigurationName = Release;
+    };
+    /* End XCConfigurationList section */
+  };
+  rootObject = 01D1A0ED26C4A1E7003A11D2 /* Project object */;
 }
