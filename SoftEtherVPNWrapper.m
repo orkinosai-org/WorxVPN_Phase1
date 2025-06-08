@@ -1,11 +1,10 @@
 #import "SoftEtherVPNWrapper.h"
 
-// Include your C/C++ SoftEther client headers as needed
+// If you have your real SoftEther client C API, include it here
 // #include "Client.h"
 // #include "Protocol.h"
 // #include "Mayaqua.h"
 
-// Example static variable for demo state
 static BOOL vpnConnected = NO;
 
 @implementation SoftEtherVPNWrapper
@@ -24,19 +23,19 @@ static BOOL vpnConnected = NO;
 
     int cPort = (int)port;
 
-    // TODO: Call your SoftEther C/C++ connect logic here
+    // Here you would call your actual C/C++ SoftEther connect logic.
+    // For now, let's simulate a successful connection (remove simulation for real use):
     // Example (replace with real function):
     // bool ok = SoftEther_Connect(cServer, cPort, cHub, cUser, cPass);
     // vpnConnected = ok;
 
-    // Simulate success for now:
-    vpnConnected = YES;
+    vpnConnected = YES; // Remove this line and implement real logic later
 
     return vpnConnected;
 }
 
 + (void)disconnect {
-    // TODO: Call SoftEther disconnect logic here.
+    // Here you would call your disconnect logic.
     vpnConnected = NO;
 }
 
