@@ -102,6 +102,7 @@
         SWIFT_VERSION = 5.0;
         PRODUCT_BUNDLE_IDENTIFIER = com.orkinosai.testapp;
         ALWAYS_SEARCH_USER_PATHS = NO;
+        SWIFT_OBJC_BRIDGING_HEADER = TestApp-Bridging-Header.h;
       };
       name = Debug;
     };
@@ -113,6 +114,7 @@
         SWIFT_VERSION = 5.0;
         PRODUCT_BUNDLE_IDENTIFIER = com.orkinosai.testapp;
         ALWAYS_SEARCH_USER_PATHS = NO;
+        SWIFT_OBJC_BRIDGING_HEADER = TestApp-Bridging-Header.h;
       };
       name = Release;
     };
