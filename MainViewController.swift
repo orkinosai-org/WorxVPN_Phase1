@@ -51,34 +51,18 @@ class MainViewController: UIViewController {
     @objc func startVPN() {
         textView.text = ""
         log("Starting VPN...")
-        if useRealVPN {
-            log("🔐 Connecting to worxvpn.662.cloud [62.24.65.211] using real credentials")
-            let success = SoftEtherVPNWrapper.connect(
-                toServer: "worxvpn.662.cloud",
-                port: 443,
-                hub: "VPN",
-                username: "indteam",
-                password: "IND312team!Admin"
-            )
-            if success {
-                log("✅ VPN Connected successfully to worxvpn.662.cloud ✓")
-            } else {
-                log("❌ VPN Connection FAILED.")
-            }
+        let success = SoftEtherVPNWrapper.connect(
+            toServer: "worxvpn.662.cloud",
+            port: 443,
+            hub: "VPN",
+            username: "indteam",
+            password: "IND312team!Admin"
+        )
+        if success {
+            log("✅ VPN Connected successfully to worxvpn.662.cloud ✓")
         } else {
-            simulateMockVPN()
+            log("❌ VPN Connection FAILED.")
         }
-    }
-
-    func simulateMockVPN() {
-        log("📡 Resolving DNS: worxvpn.662.cloud...")
-        log("✅ Resolved IP: 62.24.65.211")
-        log("🧼 Removing existing SoftEther client certificate...")
-        log("⬇️ Downloading fresh certificate from cluster...")
-        log("🔐 TLS handshake successful.")
-        log("📤 Binary protocol initiated.")
-        log("🔓 User authenticated: indteam")
-        log("✅ VPN Connected successfully to worxvpn.662.cloud ✓")
     }
 
     func log(_ message: String) {
