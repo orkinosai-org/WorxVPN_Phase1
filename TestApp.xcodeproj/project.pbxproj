@@ -7,12 +7,14 @@
 
     /* Begin PBXBuildFile section */
     01D1A0F026C4A1E7003A11D2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1A0F126C4A1E7003A11D2 /* MainViewController.swift */; };
+    100000000000000000000001 /* SoftEtherVPNWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000000 /* SoftEtherVPNWrapper.m */; };
     /* End PBXBuildFile section */
 
     /* Begin PBXFileReference section */
     01D1A0F126C4A1E7003A11D2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
     01D1A0F826C4A21E003A11D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
     01D1A0FA26C4A236003A11D2 /* TestApp */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+    100000000000000000000000 /* SoftEtherVPNWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoftEtherVPNWrapper.m; sourceTree = "<group>"; };
     /* End PBXFileReference section */
 
     /* Begin PBXGroup section */
@@ -21,6 +23,7 @@
       children = (
         01D1A0F126C4A1E7003A11D2 /* MainViewController.swift */,
         01D1A0F826C4A21E003A11D2 /* Info.plist */,
+        100000000000000000000000 /* SoftEtherVPNWrapper.m */,
       );
       path = "";
       sourceTree = "<group>";
@@ -88,6 +91,7 @@
       buildActionMask = 2147483647;
       files = (
         01D1A0F026C4A1E7003A11D2 /* MainViewController.swift in Sources */,
+        100000000000000000000001 /* SoftEtherVPNWrapper.m in Sources */,
       );
       runOnlyForDeploymentPostprocessing = 0;
     };
