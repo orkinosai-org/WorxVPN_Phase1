@@ -14,7 +14,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # If you do use CocoaPods, uncomment the following lines
+      # If you use CocoaPods, uncomment these lines
       # - name: Install CocoaPods dependencies
       #   run: |
       #     brew install cocoapods || true
@@ -23,19 +23,18 @@ jobs:
       - name: Build App
         run: |
           xcodebuild \
-            -project WorxVPN_TestApp.xcodeproj \
-            -scheme WorxVPN_TestApp \
+            -project TestApp.xcodeproj \
+            -scheme TestApp \
             -sdk iphonesimulator \
             -configuration Release \
             -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.4' \
             build
 
-      # If you have a test target, this will run your tests
       - name: Run Tests (if configured)
         run: |
           xcodebuild \
-            -project WorxVPN_TestApp.xcodeproj \
-            -scheme WorxVPN_TestApp \
+            -project TestApp.xcodeproj \
+            -scheme TestApp \
             -sdk iphonesimulator \
             -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.4' \
             test
@@ -43,6 +42,6 @@ jobs:
       - name: Upload .app bundle
         uses: actions/upload-artifact@v4
         with:
-          name: WorxVPN_TestApp-Release
-          path: build/Release-iphonesimulator/WorxVPN_TestApp.app
+          name: TestApp-Release
+          path: build/Release-iphonesimulator/TestApp.app
           if-no-files-found: warn
