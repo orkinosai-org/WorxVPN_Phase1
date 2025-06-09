@@ -1,0 +1,48 @@
+name: Build and Test WorxVPN Demo App
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: macos-14
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # If you do use CocoaPods, uncomment the following lines
+      # - name: Install CocoaPods dependencies
+      #   run: |
+      #     brew install cocoapods || true
+      #     pod install || true
+
+      - name: Build App
+        run: |
+          xcodebuild \
+            -project WorxVPN_TestApp.xcodeproj \
+            -scheme WorxVPN_TestApp \
+            -sdk iphonesimulator \
+            -configuration Release \
+            -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.4' \
+            build
+
+      # If you have a test target, this will run your tests
+      - name: Run Tests (if configured)
+        run: |
+          xcodebuild \
+            -project WorxVPN_TestApp.xcodeproj \
+            -scheme WorxVPN_TestApp \
+            -sdk iphonesimulator \
+            -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.4' \
+            test
+
+      - name: Upload .app bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: WorxVPN_TestApp-Release
+          path: build/Release-iphonesimulator/WorxVPN_TestApp.app
+          if-no-files-found: warn
