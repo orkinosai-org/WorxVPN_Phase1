@@ -14,33 +14,29 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Detect Xcode project file
-        id: detect_proj
+      - name: Detect Xcode project and scheme
+        id: detect
         run: |
           PROJ=$(ls *.xcodeproj | head -n 1)
-          echo "project=$PROJ" >> $GITHUB_OUTPUT
-
-      - name: Detect Scheme
-        id: detect_scheme
-        run: |
-          SCHEME=$(xcodebuild -list -project ${{ steps.detect_proj.outputs.project }} | awk '/Schemes:/ {getline; print $1}')
-          echo "scheme=$SCHEME" >> $GITHUB_OUTPUT
+          SCHEME=$(xcodebuild -list -project "$PROJ" | awk '/Schemes:/ {getline; print $1}')
+          echo "PROJ=$PROJ" >> $GITHUB_ENV
+          echo "SCHEME=$SCHEME" >> $GITHUB_ENV
 
       - name: Build App
         run: |
           xcodebuild \
-            -project ${{ steps.detect_proj.outputs.project }} \
-            -scheme ${{ steps.detect_scheme.outputs.scheme }} \
+            -project "$PROJ" \
+            -scheme "$SCHEME" \
             -sdk iphonesimulator \
             -configuration Release \
             -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.4' \
             build
 
-      - name: Run Tests (if configured)
+      - name: Run Tests
         run: |
           xcodebuild \
-            -project ${{ steps.detect_proj.outputs.project }} \
-            -scheme ${{ steps.detect_scheme.outputs.scheme }} \
+            -project "$PROJ" \
+            -scheme "$SCHEME" \
             -sdk iphonesimulator \
             -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.4' \
             test
