@@ -1,4 +1,4 @@
-name: Build and Test WorxVPN Demo App
+name: Build and Test WorxVPN Phase 1
 
 on:
   push:
@@ -14,17 +14,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # If you use CocoaPods, uncomment these lines
-      # - name: Install CocoaPods dependencies
-      #   run: |
-      #     brew install cocoapods || true
-      #     pod install || true
+      - name: Detect Xcode project file
+        id: detect_proj
+        run: |
+          PROJ=$(ls *.xcodeproj | head -n 1)
+          echo "project=$PROJ" >> $GITHUB_OUTPUT
+
+      - name: Detect Scheme
+        id: detect_scheme
+        run: |
+          SCHEME=$(xcodebuild -list -project ${{ steps.detect_proj.outputs.project }} | awk '/Schemes:/ {getline; print $1}')
+          echo "scheme=$SCHEME" >> $GITHUB_OUTPUT
 
       - name: Build App
         run: |
           xcodebuild \
-            -project TestApp.xcodeproj \
-            -scheme TestApp \
+            -project ${{ steps.detect_proj.outputs.project }} \
+            -scheme ${{ steps.detect_scheme.outputs.scheme }} \
             -sdk iphonesimulator \
             -configuration Release \
             -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.4' \
@@ -33,8 +39,8 @@ jobs:
       - name: Run Tests (if configured)
         run: |
           xcodebuild \
-            -project TestApp.xcodeproj \
-            -scheme TestApp \
+            -project ${{ steps.detect_proj.outputs.project }} \
+            -scheme ${{ steps.detect_scheme.outputs.scheme }} \
             -sdk iphonesimulator \
             -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.4' \
             test
@@ -42,6 +48,6 @@ jobs:
       - name: Upload .app bundle
         uses: actions/upload-artifact@v4
         with:
-          name: TestApp-Release
-          path: build/Release-iphonesimulator/TestApp.app
+          name: Phase1-iOS-App
+          path: build/Release-iphonesimulator/*.app
           if-no-files-found: warn
