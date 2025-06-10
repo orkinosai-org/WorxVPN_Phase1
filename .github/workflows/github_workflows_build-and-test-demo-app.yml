@@ -1,4 +1,4 @@
-name: Build and Test WorxVPN Phase 1
+name: Build and Test WorxVPN
 
 on:
   push:
@@ -14,17 +14,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Detect scheme
-        id: detect_scheme
-        run: |
-          SCHEME=$(xcodebuild -list -project "WorxVPN_Phase1_CompleteFinal/WorxVPN_TestApp.xcodeproj" | awk '/Schemes:/ {getline; print $1}')
-          echo "SCHEME=$SCHEME" >> $GITHUB_ENV
-
       - name: Build App
         run: |
           xcodebuild \
-            -project "WorxVPN_Phase1_CompleteFinal/WorxVPN_TestApp.xcodeproj" \
-            -scheme "$SCHEME" \
+            -project "WorxVPN_TestApp.xcodeproj" \
+            -scheme "<YourScheme>" \
             -sdk iphonesimulator \
             -configuration Release \
             -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.4' \
@@ -33,8 +27,8 @@ jobs:
       - name: Run Tests
         run: |
           xcodebuild \
-            -project "WorxVPN_Phase1_CompleteFinal/WorxVPN_TestApp.xcodeproj" \
-            -scheme "$SCHEME" \
+            -project "WorxVPN_TestApp.xcodeproj" \
+            -scheme "<YourScheme>" \
             -sdk iphonesimulator \
             -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.4' \
             test
@@ -42,6 +36,6 @@ jobs:
       - name: Upload .app bundle
         uses: actions/upload-artifact@v4
         with:
-          name: Phase1-iOS-App
-          path: WorxVPN_Phase1_CompleteFinal/build/Release-iphonesimulator/*.app
+          name: WorxVPN-iOS-App
+          path: build/Release-iphonesimulator/*.app
           if-no-files-found: warn
