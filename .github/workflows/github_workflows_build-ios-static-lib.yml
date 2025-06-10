@@ -1,0 +1,42 @@
+name: Build iOS Static Library
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-ios-static-lib:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Update Homebrew
+        run: brew update
+
+      - name: Install CMake
+        run: brew install cmake
+
+      - name: Clean build directory
+        run: rm -rf build
+
+      - name: Configure project for iOS
+        run: |
+          mkdir build
+          cmake -S . -B build -G Xcode \
+            -DCMAKE_SYSTEM_NAME=iOS \
+            -DCMAKE_OSX_SYSROOT=iphoneos \
+            -DCMAKE_OSX_ARCHITECTURES=arm64 \
+            -DCMAKE_BUILD_TYPE=Release
+      - name: Build static library
+        run: cmake --build build --config Release
+
+      - name: List build output
+        run: ls -lR build
+
+      - name: Upload compiled library
+        uses: actions/upload-artifact@v4
+        with:
+          name: libsoftethervpn
+          path: build/Release-iphoneos/libsoftethervpn.a
+          if-no-files-found: ignore

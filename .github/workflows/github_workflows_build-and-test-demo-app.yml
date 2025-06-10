@@ -1,0 +1,41 @@
+name: Build and Test WorxVPN
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: macos-14
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build App
+        run: |
+          xcodebuild \
+            -project "WorxVPN_TestApp.xcodeproj" \
+            -scheme "<YourScheme>" \
+            -sdk iphonesimulator \
+            -configuration Release \
+            -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.4' \
+            build
+
+      - name: Run Tests
+        run: |
+          xcodebuild \
+            -project "WorxVPN_TestApp.xcodeproj" \
+            -scheme "<YourScheme>" \
+            -sdk iphonesimulator \
+            -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.4' \
+            test
+
+      - name: Upload .app bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: WorxVPN-iOS-App
+          path: build/Release-iphonesimulator/*.app
+          if-no-files-found: warn

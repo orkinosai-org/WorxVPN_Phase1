@@ -1,0 +1,203 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F424E6A42C12D4AA00768F3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424E6A32C12D4AA00768F3A /* AppDelegate.swift */; };
+		F424E6A62C12D4AA00768F3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424E6A52C12D4AA00768F3A /* ViewController.swift */; };
+		F424E6A92C12D4AB00768F3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F424E6A82C12D4AA00768F3A /* Main.storyboard */; };
+		F424E6B42C12D53900768F3A /* libsoftethervpn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F424E6B32C12D53900768F3A /* libsoftethervpn.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F424E6A02C12D4A900768F3A /* WorxVPN_TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorxVPN_TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F424E6A32C12D4AA00768F3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F424E6A52C12D4AA00768F3A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F424E6A82C12D4AA00768F3A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F424E6B32C12D53900768F3A /* libsoftethervpn.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = ../lib/libsoftethervpn.a; sourceTree = "<group>"; };
+		F424E6B52C12D56B00768F3A /* WorxVPN_TestApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WorxVPN_TestApp-Bridging-Header.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F424E69D2C12D4A900768F3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F424E6B42C12D53900768F3A /* libsoftethervpn.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F424E6972C12D4A900768F3A = {
+			isa = PBXGroup;
+			children = (
+				F424E6A22C12D4A900768F3A /* WorxVPN_TestApp */,
+				F424E6A12C12D4A900768F3A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F424E6A12C12D4A900768F3A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F424E6A02C12D4A900768F3A /* WorxVPN_TestApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F424E6A22C12D4A900768F3A /* WorxVPN_TestApp */ = {
+			isa = PBXGroup;
+			children = (
+				F424E6A32C12D4AA00768F3A /* AppDelegate.swift */,
+				F424E6A52C12D4AA00768F3A /* ViewController.swift */,
+				F424E6A82C12D4AA00768F3A /* Main.storyboard */,
+				F424E6B52C12D56B00768F3A /* WorxVPN_TestApp-Bridging-Header.h */,
+				F424E6B32C12D53900768F3A /* libsoftethervpn.a */,
+			);
+			path = WorxVPN_TestApp;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F424E69F2C12D4A900768F3A /* WorxVPN_TestApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F424E6B22C12D4A900768F3A /* Build configuration list for PBXNativeTarget "WorxVPN_TestApp" */;
+			buildPhases = (
+				F424E69C2C12D4A900768F3A /* Sources */,
+				F424E69D2C12D4A900768F3A /* Frameworks */,
+				F424E69E2C12D4A900768F3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WorxVPN_TestApp;
+			productName = WorxVPN_TestApp;
+			productReference = F424E6A02C12D4A900768F3A /* WorxVPN_TestApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F424E6982C12D4A900768F3A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = F424E69B2C12D4A900768F3A /* Build configuration list for PBXProject "WorxVPN_TestApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F424E6972C12D4A900768F3A;
+			productRefGroup = F424E6A12C12D4A900768F3A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F424E69F2C12D4A900768F3A /* WorxVPN_TestApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F424E69E2C12D4A900768F3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F424E6A92C12D4AB00768F3A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F424E69C2C12D4A900768F3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F424E6A62C12D4AA00768F3A /* ViewController.swift in Sources */,
+				F424E6A42C12D4AA00768F3A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F424E6B02C12D4A900768F3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/lib/includes";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/lib";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WorxVPN_TestApp/WorxVPN_TestApp-Bridging-Header.h";
+				SWIFT_VERSION = "5.0";
+        TARGETED_DEVICE_FAMILY = "1,2";
+        ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+        INFOPLIST_FILE = WorxVPN_TestApp/Info.plist;
+        PRODUCT_BUNDLE_IDENTIFIER = "com.example.WorxVPN-TestApp";
+			};
+			name = Debug;
+		};
+		F424E6B12C12D4A900768F3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/lib/includes";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/lib";
+				PRODUCT_NAME = "$(TARGET_name)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WorxVPN_TestApp/WorxVPN_TestApp-Bridging-Header.h";
+				SWIFT_VERSION = "5.0";
+        TARGETED_DEVICE_FAMILY = "1,2";
+        ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+        INFOPLIST_FILE = WorxVPN_TestApp/Info.plist;
+        PRODUCT_BUNDLE_IDENTIFIER = "com.example.WorxVPN-TestApp";
+			};
+			name = Release;
+		};
+		F424E6AF2C12D4A900768F3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F424E6AE2C12D4A900768F3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F424E69B2C12D4A900768F3A /* Build configuration list for PBXProject "WorxVPN_TestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F424E6AF2C12D4A900768F3A /* Debug */,
+				F424E6AE2C12D4A900768F3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F424E6B22C12D4A900768F3A /* Build configuration list for PBXNativeTarget "WorxVPN_TestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F424E6B02C12D4A900768F3A /* Debug */,
+				F424E6B12C12D4A900768F3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F424E6982C12D4A900768F3A /* Project object */;
+}

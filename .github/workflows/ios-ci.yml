@@ -1,0 +1,39 @@
+name: iOS Build and Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Ruby (for CocoaPods/Fastlane, optional)
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+
+      - name: Install dependencies (CocoaPods, if needed)
+        run: |
+          brew install cocoapods || true
+          pod install || true
+
+      - name: Build and Run Tests
+        run: |
+          xcodebuild test \
+            -project TestApp.xcodeproj \
+            -scheme TestApp \
+            -sdk iphonesimulator \
+            -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.4'
+
+      - name: Upload test logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: xcode-test-logs
+          path: ~/Library/Logs/DiagnosticReports
+          if-no-files-found: ignore
