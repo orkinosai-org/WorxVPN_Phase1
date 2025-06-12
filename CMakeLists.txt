@@ -27,11 +27,13 @@ foreach(PATTERN
     ".*_Vista.*\\.c$"
     ".*VLanWin32\\.c$"
     ".*VLanUnix\\.c$"
+    ".*VLan\\.c$"
+    ".*VG\\.c$"
+    ".*UT\\.c$"
+    ".*UdpAccel\\.c$"
     ".*WaterMark\\.c$"
     ".*Virtual\\.c$"
     ".*Unix\\.c$"
-    ".*VLan\\.c$"
-    ".*VG\\.c$"
 )
     list(FILTER SOURCES EXCLUDE REGEX "${PATTERN}")
 endforeach()
