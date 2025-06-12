@@ -34,6 +34,9 @@ foreach(PATTERN
     ".*WaterMark\\.c$"
     ".*Virtual\\.c$"
     ".*Unix\\.c$"
+    ".*Tracking\\.c$"
+    ".*Tick64\\.c$"
+    ".*TcpIp\\.c$"
 )
     list(FILTER SOURCES EXCLUDE REGEX "${PATTERN}")
 endforeach()
