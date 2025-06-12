@@ -53,6 +53,10 @@ foreach(PATTERN
     ".*Pack\\.c$"
     ".*Protocol\\.c$"
     ".*Object\\.c$"
+    ".*OS\\.c$"
+    ".*Network\\.c$"
+    ".*NullLan\\.c$"
+    ".*NativeStack\\.c$"
 )
     list(FILTER SOURCES EXCLUDE REGEX "${PATTERN}")
 endforeach()
