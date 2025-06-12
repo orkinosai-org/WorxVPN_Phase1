@@ -47,6 +47,8 @@ foreach(PATTERN
     ".*Sam\\.c$"
     ".*SW\\.c$"
     ".*SM\\.c$"
+    ".*Remote\\.c$"
+    ".*Radius\\.c$"
 )
     list(FILTER SOURCES EXCLUDE REGEX "${PATTERN}")
 endforeach()
