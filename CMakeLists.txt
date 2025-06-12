@@ -60,6 +60,8 @@ foreach(PATTERN
     ".*Microsoft\\.c$"
     ".*Memory\\.c$"
     ".*Mayaqua\\.c$"
+    ".*Nat\\.c$"
+    ".*NM\\.c$"
 )
     list(FILTER SOURCES EXCLUDE REGEX "${PATTERN}")
 endforeach()
