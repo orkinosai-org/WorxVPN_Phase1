@@ -9,9 +9,24 @@ endif()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
+# Gather all sources
 file(GLOB_RECURSE SOURCES
-    Core/*.c Protocol/*.c Session/*.c Crypto/*.c Mayaqua/*.c
+    Core/*.c
+    Protocol/*.c
+    Session/*.c
+    Crypto/*.c
+    Mayaqua/*.c
 )
+
+# Exclude Windows-specific and UI files that cannot build on iOS/macOS
+list(FILTER SOURCES EXCLUDE REGEX ".*/WinUi\\.c$")
+list(FILTER SOURCES EXCLUDE REGEX ".*/Wpc\\.c$")
+list(FILTER SOURCES EXCLUDE REGEX ".*/Win32\\.c$")
+list(FILTER SOURCES EXCLUDE REGEX ".*/WebUI\\.c$")
+list(FILTER SOURCES EXCLUDE REGEX ".*/CedarPlugin\\.c$")
+# Exclude any file with _Win or _Vista in the name
+list(FILTER SOURCES EXCLUDE REGEX ".*_Win.*\\.c$")
+list(FILTER SOURCES EXCLUDE REGEX ".*_Vista.*\\.c$")
 
 add_library(softethervpn STATIC ${SOURCES})
 
