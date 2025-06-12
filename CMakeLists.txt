@@ -46,6 +46,7 @@ foreach(PATTERN
     ".*SeLowUser\\.c$"
     ".*Sam\\.c$"
     ".*SW\\.c$"
+    ".*SM\\.c$"
 )
     list(FILTER SOURCES EXCLUDE REGEX "${PATTERN}")
 endforeach()
