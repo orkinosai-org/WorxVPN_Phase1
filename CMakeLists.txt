@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 3.10)
 project(SoftEtherVPNClientLib VERSION 1.0 LANGUAGES C)
 set(CMAKE_C_STANDARD 11)
 
-# Set minimum iOS version if building for iOS
 if(CMAKE_SYSTEM_NAME STREQUAL "iOS")
     set(CMAKE_OSX_DEPLOYMENT_TARGET "12.0" CACHE STRING "Minimum iOS deployment version" FORCE)
 endif()
@@ -38,6 +37,9 @@ foreach(PATTERN
     ".*Tick64\\.c$"
     ".*TcpIp\\.c$"
     ".*Table\\.c$"
+    ".*Session.c$"
+    ".*Server.c$"
+    ".*SecureNAT.c$"
 )
     list(FILTER SOURCES EXCLUDE REGEX "${PATTERN}")
 endforeach()
