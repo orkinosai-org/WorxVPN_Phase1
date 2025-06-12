@@ -9,7 +9,6 @@ endif()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
-# Gather all sources
 file(GLOB_RECURSE SOURCES
     Core/*.c
     Protocol/*.c
@@ -18,7 +17,6 @@ file(GLOB_RECURSE SOURCES
     Mayaqua/*.c
 )
 
-# Exclude Windows-specific and problematic files
 foreach(PATTERN
     ".*WinUi\\.c$"
     ".*Wpc\\.c$"
@@ -32,6 +30,8 @@ foreach(PATTERN
     ".*WaterMark\\.c$"
     ".*Virtual\\.c$"
     ".*Unix\\.c$"
+    ".*VLan\\.c$"
+    ".*VG\\.c$"
 )
     list(FILTER SOURCES EXCLUDE REGEX "${PATTERN}")
 endforeach()
@@ -44,7 +44,6 @@ target_include_directories(softethervpn PUBLIC
 
 target_compile_definitions(softethervpn PRIVATE OS_UNIX UNIX_BSD CPU_64)
 
-# Set output directory for the .a file to match your workflow
 set_target_properties(softethervpn PROPERTIES
     ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/Release-iphoneos
     OUTPUT_NAME "softethervpn"
