@@ -18,15 +18,21 @@ file(GLOB_RECURSE SOURCES
     Mayaqua/*.c
 )
 
-# Exclude Windows-specific and UI files that cannot build on iOS/macOS
-list(FILTER SOURCES EXCLUDE REGEX ".*/WinUi\\.c$")
-list(FILTER SOURCES EXCLUDE REGEX ".*/Wpc\\.c$")
-list(FILTER SOURCES EXCLUDE REGEX ".*/Win32\\.c$")
-list(FILTER SOURCES EXCLUDE REGEX ".*/WebUI\\.c$")
-list(FILTER SOURCES EXCLUDE REGEX ".*/CedarPlugin\\.c$")
-# Exclude any file with _Win or _Vista in the name
-list(FILTER SOURCES EXCLUDE REGEX ".*_Win.*\\.c$")
-list(FILTER SOURCES EXCLUDE REGEX ".*_Vista.*\\.c$")
+# Exclude Windows-specific and problematic files
+foreach(PATTERN
+    ".*WinUi\\.c$"
+    ".*Wpc\\.c$"
+    ".*Win32\\.c$"
+    ".*WebUI\\.c$"
+    ".*CedarPlugin\\.c$"
+    ".*_Win.*\\.c$"
+    ".*_Vista.*\\.c$"
+    ".*VLanWin32\\.c$"
+    ".*WaterMark\\.c$"
+    ".*Virtual\\.c$"
+)
+    list(FILTER SOURCES EXCLUDE REGEX "${PATTERN}")
+endforeach()
 
 add_library(softethervpn STATIC ${SOURCES})
 
