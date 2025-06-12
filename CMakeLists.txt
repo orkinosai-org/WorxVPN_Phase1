@@ -57,6 +57,9 @@ foreach(PATTERN
     ".*Network\\.c$"
     ".*NullLan\\.c$"
     ".*NativeStack\\.c$"
+    ".*Microsoft\\.c$"
+    ".*Memory\\.c$"
+    ".*Mayaqua\\.c$"
 )
     list(FILTER SOURCES EXCLUDE REGEX "${PATTERN}")
 endforeach()
