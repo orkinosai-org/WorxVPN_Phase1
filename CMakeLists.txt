@@ -37,9 +37,9 @@ foreach(PATTERN
     ".*Tick64\\.c$"
     ".*TcpIp\\.c$"
     ".*Table\\.c$"
-    ".*Session.c$"
-    ".*Server.c$"
-    ".*SecureNAT.c$"
+    ".*Session\\.c$"
+    ".*Server\\.c$"
+    ".*SecureNAT\\.c$"
 )
     list(FILTER SOURCES EXCLUDE REGEX "${PATTERN}")
 endforeach()
