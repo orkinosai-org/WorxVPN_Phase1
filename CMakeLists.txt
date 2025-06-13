@@ -62,6 +62,10 @@ foreach(PATTERN
     ".*Mayaqua\\.c$"
     ".*Nat\\.c$"
     ".*NM\\.c$"
+    ".*Logging\\.c$"
+    ".*Listener\\.c$"
+    ".*Link\\.c$"
+    ".*Layer3\\.c$"
 )
     list(FILTER SOURCES EXCLUDE REGEX "${PATTERN}")
 endforeach()
