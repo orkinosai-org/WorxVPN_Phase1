@@ -66,6 +66,8 @@ foreach(PATTERN
     ".*Listener\\.c$"
     ".*Link\\.c$"
     ".*Layer3\\.c$"
+    ".*Interop_SSTP\\.c$"
+    ".*Interop_OpenVPN\\.c$"
 )
     list(FILTER SOURCES EXCLUDE REGEX "${PATTERN}")
 endforeach()
