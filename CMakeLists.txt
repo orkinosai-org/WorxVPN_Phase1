@@ -84,6 +84,11 @@ foreach(PATTERN
     ".*EtherLog\\.c$"
     ".*FileIO\\.c$"
     ".*Encrypt\\.c$"
+    ".*Console\\.c$"
+    ".*Connection\\.c$"
+    ".*Connect\\.c$"
+    ".*Command\\.c$"
+    ".*Client\\.c$"
 )
     list(FILTER SOURCES EXCLUDE REGEX "${PATTERN}")
 endforeach()
