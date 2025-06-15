@@ -89,6 +89,10 @@ foreach(PATTERN
     ".*Connect\\.c$"
     ".*Command\\.c$"
     ".*Client\\.c$"
+    ".*Cfg\\.c$"
+    ".*CedarPch\\.c$"
+    ".*Cedar\\.c$"
+    ".*CM\\.c$"
 )
     list(FILTER SOURCES EXCLUDE REGEX "${PATTERN}")
 endforeach()
