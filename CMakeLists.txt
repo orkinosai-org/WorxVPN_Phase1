@@ -76,6 +76,10 @@ foreach(PATTERN
     ".*IPsec_IPC\\.c$"
     ".*IPsec_IKE\\.c$"
     ".*IPsec_EtherIP\\.c$"
+    ".*IPsec\\.c$"
+    ".*Hub\\.c$"
+    ".*EtherLog\\.c$"
+    ".*FileIO\\.c$"
 )
     list(FILTER SOURCES EXCLUDE REGEX "${PATTERN}")
 endforeach()
