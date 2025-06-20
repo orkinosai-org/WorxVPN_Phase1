@@ -1250,6 +1250,10 @@ UINT CedarGetFifoBudgetConsuming(CEDAR *c);
 UINT CedarGetQueueBudgetBalance(CEDAR *c);
 UINT CedarGetFifoBudgetBalance(CEDAR *c);
 bool CedarIsThereAnyEapEnabledRadiusConfig(CEDAR *c);
+#define CEDAR_BRIDGE_STR           "BRIDGE"
+#define CEDAR_SERVER_STR           "SERVER"
+#define CEDAR_SERVER_FARM_STR      "FARM_MEMBER"
+#define GC_DEFAULT_PORT            443
 
 
 
